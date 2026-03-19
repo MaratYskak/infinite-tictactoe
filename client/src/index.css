@@ -1,0 +1,315 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Cyberpunk Neon Theme - Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Neon Colors */
+  --neon-red: #ff006e;
+  --neon-red-glow: #ff1493;
+  --neon-blue: #00d9ff;
+  --neon-blue-glow: #0099ff;
+  --neon-purple: #b537f2;
+  --neon-purple-glow: #d946ef;
+  
+  --primary: var(--neon-blue);
+  --primary-foreground: #0a0e27;
+  --sidebar-primary: var(--neon-purple);
+  --sidebar-primary-foreground: #0a0e27;
+  --chart-1: var(--neon-red);
+  --chart-2: var(--neon-blue);
+  --chart-3: var(--neon-purple);
+  --chart-4: var(--neon-red);
+  --chart-5: var(--neon-blue);
+  --radius: 0.5rem;
+  --background: #0a0e27;
+  --foreground: #f0f0f0;
+  --card: #1a1f3a;
+  --card-foreground: #f0f0f0;
+  --popover: #1a1f3a;
+  --popover-foreground: #f0f0f0;
+  --secondary: var(--neon-purple);
+  --secondary-foreground: #0a0e27;
+  --muted: #2a2f4a;
+  --muted-foreground: #a0a0b0;
+  --accent: var(--neon-red);
+  --accent-foreground: #0a0e27;
+  --destructive: var(--neon-red);
+  --destructive-foreground: #0a0e27;
+  --border: #2a2f4a;
+  --input: #15192e;
+  --ring: var(--neon-blue);
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-accent: var(--neon-purple);
+  --sidebar-accent-foreground: #0a0e27;
+  --sidebar-border: #2a2f4a;
+  --sidebar-ring: var(--neon-blue);
+}
+
+.dark {
+  /* Dark mode uses same neon colors */
+  --primary: var(--neon-blue);
+  --primary-foreground: #0a0e27;
+  --sidebar-primary: var(--neon-purple);
+  --sidebar-primary-foreground: #0a0e27;
+  --background: #0a0e27;
+  --foreground: #f0f0f0;
+  --card: #1a1f3a;
+  --card-foreground: #f0f0f0;
+  --popover: #1a1f3a;
+  --popover-foreground: #f0f0f0;
+  --secondary: var(--neon-purple);
+  --secondary-foreground: #0a0e27;
+  --muted: #2a2f4a;
+  --muted-foreground: #a0a0b0;
+  --accent: var(--neon-red);
+  --accent-foreground: #0a0e27;
+  --destructive: var(--neon-red);
+  --destructive-foreground: #0a0e27;
+  --border: #2a2f4a;
+  --input: #15192e;
+  --ring: var(--neon-blue);
+  --chart-1: var(--neon-red);
+  --chart-2: var(--neon-blue);
+  --chart-3: var(--neon-purple);
+  --chart-4: var(--neon-red);
+  --chart-5: var(--neon-blue);
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-accent: var(--neon-purple);
+  --sidebar-accent-foreground: #0a0e27;
+  --sidebar-border: #2a2f4a;
+  --sidebar-ring: var(--neon-blue);
+}
+
+.light {
+  /* Light mode - softer colors */
+  --primary: #0066cc;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --secondary: #7c3aed;
+  --secondary-foreground: #ffffff;
+  --muted: #e5e7eb;
+  --muted-foreground: #6b7280;
+  --accent: #dc2626;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #f3f4f6;
+  --ring: #0066cc;
+  --chart-1: #dc2626;
+  --chart-2: #0066cc;
+  --chart-3: #7c3aed;
+  --chart-4: #dc2626;
+  --chart-5: #0066cc;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-accent: #7c3aed;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #0066cc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-red {
+    color: var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red-glow);
+  }
+
+  .neon-glow-blue {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue-glow);
+  }
+
+  .neon-glow-purple {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple-glow);
+  }
+
+  .neon-box-glow-red {
+    box-shadow: 0 0 20px var(--neon-red), inset 0 0 20px var(--neon-red) / 0.2;
+  }
+
+  .neon-box-glow-blue {
+    box-shadow: 0 0 20px var(--neon-blue), inset 0 0 20px var(--neon-blue) / 0.2;
+  }
+
+  .neon-box-glow-purple {
+    box-shadow: 0 0 20px var(--neon-purple), inset 0 0 20px var(--neon-purple) / 0.2;
+  }
+
+  .neon-border-red {
+    border-color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red), inset 0 0 10px var(--neon-red) / 0.1;
+  }
+
+  .neon-border-blue {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue), inset 0 0 10px var(--neon-blue) / 0.1;
+  }
+
+  .neon-border-purple {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple), inset 0 0 10px var(--neon-purple) / 0.1;
+  }
+}
+
+/* Animations */
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+}
+
+@keyframes neon-box-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor, inset 0 0 20px currentColor / 0.2;
+  }
+  50% {
+    box-shadow: 0 0 40px currentColor, inset 0 0 40px currentColor / 0.3;
+  }
+}
+
+@keyframes draw-stroke {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-neon-box-pulse {
+  animation: neon-box-pulse 2s ease-in-out infinite;
+}
+
+.animate-draw-stroke {
+  animation: draw-stroke 0.6s ease-out forwards;
+}
