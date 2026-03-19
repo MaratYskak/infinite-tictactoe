@@ -11,7 +11,7 @@ export default function NotFound() {
     // Автоматический редирект через 3 секунды
     const timer = setTimeout(() => {
       setLocation("/");
-    }, 3000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [setLocation]);
