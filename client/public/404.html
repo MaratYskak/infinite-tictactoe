@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // GitHub Pages 404 redirect hack
-        // This file is served for any 404 error and redirects to index.html
-        // The path is preserved in sessionStorage for the app to handle
-        const path = window.location.pathname;
-        const base = path.substring(0, path.lastIndexOf('/') + 1);
-        sessionStorage.redirect = path;
-        window.location.href = base + 'index.html';
+        window.location.replace('/infinite-tictactoe/');
     </script>
 </head>
+
 <body>
-    <p>Redirecting...</p>
 </body>
+
 </html>
